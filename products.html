@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتجات - Loving Homes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="modern-nav">
+        <div class="nav-wrapper">
+            <div class="nav-actions">
+                <button class="icon-btn login-btn" onclick="showLogin()"><i class="fas fa-user"></i></button>
+                <button class="icon-btn cart-btn" onclick="showCart()"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></button>
+            </div>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-paw"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="products.html" class="nav-item active">
+                    <i class="fas fa-bone"></i>
+                    <span>المنتجات</span>
+                </a>
+                <a href="accessories.html" class="nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>المرافق</span>
+                </a>
+                <a href="bundles.html" class="nav-item">
+                    <i class="fas fa-gift"></i>
+                    <span>الحزم</span>
+                </a>
+                <a href="testimonials.html" class="nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>آراء العملاء</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>اتصل بنا</span>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand">
+                <span class="brand-text">Loving Homes</span>
+                <img src="media/logo loving homes.webp" alt="Loving Homes" class="brand-logo">
+            </a>
+
+            <button class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header-modern">
+        <div class="header-content">
+            <h1> كل ما يحتاجه صديقك الوفي</h1>
+            <p>طعام صحي ومغذي لكلبك العزيز</p>
+        </div>
+    </section>
+
+    <!-- شريط التنقل الفرعي مع الفلترة -->
+    <div class="sub-nav">
+        <div class="sub-nav-container">
+            <button class="sub-nav-item active" data-category="all">
+                <i class="fas fa-th"></i>
+                <span>الكل</span>
+            </button>
+            <button class="sub-nav-item" data-category="food">
+                <i class="fas fa-drumstick-bite"></i>
+                <span>الأكل</span>
+            </button>
+            <button class="sub-nav-item" data-category="toys">
+                <i class="fas fa-tenge"></i>
+                <span>الألعاب</span>
+            </button>
+            <button class="sub-nav-item" data-category="cleaning">
+                <i class="fas fa-broom"></i>
+                <span>أدوات التنظيف</span>
+            </button>
+            <button class="sub-nav-item" data-category="clothes">
+                <i class="fas fa-tshirt"></i>
+                <span>الملابس والاكسسوارات</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- فلتر السعر -->
+    <div class="price-filter">
+        <label>السعر الأقصى: <span id="priceValue">40</span> د.أ</label>
+        <input type="range" id="priceRange" min="0" max="40" value="40" oninput="updatePriceDisplay(); filterByPrice()">
+    </div>
+
+    <!-- Products -->
+    <main class="products-section">
+        <div class="products-grid">
+            <div class="product-card-modern" data-category="food" data-price="18">
+                <div class="product-badge">الأكثر مبيعاً</div>
+                <div class="product-img"><img src="media/dog29.webp" alt="طعام كلاب"></div>
+                <h3>طعام كلاب Premium</h3>
+                <p class="desc">طعام طبيعي 100% بدون إضافات</p>
+                <div class="product-footer">
+                    <span class="price">18 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="food" data-price="12">
+                <div class="product-img"><img src="media/dog28.webp" alt="فيتامنيات"></div>
+                <h3>فيتامنيات متعددة</h3>
+                <p class="desc">للصحة العامة والمناعة</p>
+                <div class="product-footer">
+                    <span class="price">12 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="food">
+                <div class="product-img"><img src="media/dog22.webp" alt="دجاج"></div>
+                <h3>قطع دجاج مجففة</h3>
+                <p class="desc">وجبة خفيفة صحية</p>
+                <div class="product-footer">
+                    <span class="price">7 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="food">
+                <div class="product-img"><img src="media/dog25.webp" alt="طعام جرو"></div>
+                <h3>طعام جرو صغير</h3>
+                <p class="desc">مخصص للجرو من 2-12 شهر</p>
+                <div class="product-footer">
+                    <span class="price">20 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="toys">
+                <div class="product-badge">جديد</div>
+                <div class="product-img"><img src="media/dog18.webp" alt="كرة تفاعلية"></div>
+                <h3>كرة تفاعلية</h3>
+                <p class="desc">مضائة للعب في الظلام</p>
+                <div class="product-footer">
+                    <span class="price">10 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="toys">
+                <div class="product-img"><img src="media/dog16.webp" alt="دمية plush"></div>
+                <h3>دمية plush</h3>
+                <p class="desc">آمنة ومقاومة للتمزق</p>
+                <div class="product-footer">
+                    <span class="price">8 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="cleaning">
+                <div class="product-badge">الأكثر مبيعاً</div>
+                <div class="product-img"><img src="media/dog9.webp" alt="شامبو طبيعي"></div>
+                <h3>شامبو طبيعي</h3>
+                <p class="desc">آمن لجميع أنواع الفرو</p>
+                <div class="product-footer">
+                    <span class="price">14 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="cleaning">
+                <div class="product-img"><img src="media/dog30.webp" alt="فرشاة أسنان"></div>
+                <h3>فرشاة أسنان</h3>
+                <p class="desc">للعناية اليومية بالأسنان</p>
+                <div class="product-footer">
+                    <span class="price">6 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="cleaning">
+                <div class="product-badge">جديد</div>
+                <div class="product-img"><img src="media/dog10.webp" alt="مزيل روائح"></div>
+                <h3>مزيل روائح</h3>
+                <p class="desc">تعطر وتزيل الروائح الكريهة</p>
+                <div class="product-footer">
+                    <span class="price">10 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="cleaning">
+                <div class="product-img"><img src="media/dog1.webp" alt="مقص أظافر"></div>
+                <h3>مقص أظافر</h3>
+                <p class="desc">آمن ومريح للكلاب</p>
+                <div class="product-footer">
+                    <span class="price">8 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="cleaning">
+                <div class="product-badge">مميز</div>
+                <div class="product-img"><img src="media/dog6.webp" alt="مناشف سريعة"></div>
+                <h3>مناشف سريعة</h3>
+                <p class="desc">تمتص الرطوبة بسرعة</p>
+                <div class="product-footer">
+                    <span class="price">12 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-img"><img src="media/dog31.webp" alt="ربطة شعر"></div>
+                <h3>ربطة شعر</h3>
+                <p class="desc">قطيفة ومريحة</p>
+                <div class="product-footer">
+                    <span class="price">5 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-badge">مميز</div>
+                <div class="product-img"><img src="media/dog4.webp" alt="سترة شتوية"></div>
+                <h3>سترة شتوية</h3>
+                <p class="desc">مبطنة للدفء في البرد</p>
+                <div class="product-footer">
+                    <span class="price">35 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-badge">مميز</div>
+                <div class="product-img"><img src="media/dog3.webp" alt="وسادة وبطانية"></div>
+                <h3>وسادة وبطانية</h3>
+                <p class="desc">ناعمة ودافئة للنوم</p>
+                <div class="product-footer">
+                    <span class="price">25 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-badge">جديد</div>
+                <div class="product-img"><img src="media/dog12.webp" alt="كوب طعام"></div>
+                <h3>كوب طعام</h3>
+                <p class="desc">مزدوج للتغذية الصحية</p>
+                <div class="product-footer">
+                    <span class="price">10 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-img"><img src="media/dog20.webp" alt="طوق كلاب"></div>
+                <h3>طوق كلاب</h3>
+                <p class="desc">متين ومريح</p>
+                <div class="product-footer">
+                    <span class="price">8 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-badge">صيف</div>
+                <div class="product-img"><img src="media/dog34.webp" alt="قميص خفيف"></div>
+                <h3>قميص خفيف</h3>
+                <p class="desc">مثالي للمشي في الصيف</p>
+                <div class="product-footer">
+                    <span class="price">15 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-img"><img src="media/dog17.webp" alt="تيشيرت رياضي"></div>
+                <h3>تيشيرت رياضي</h3>
+                <p class="desc">قابل للتنفس ومريح</p>
+                <div class="product-footer">
+                    <span class="price">12 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="product-card-modern" data-category="clothes">
+                <div class="product-badge">مميز</div>
+                <div class="product-img"><img src="media/dog5.webp" alt="قبعة"></div>
+                <h3>قبعة</h3>
+                <p class="desc">تحمي من أشعة الشمس</p>
+                <div class="product-footer">
+                    <span class="price">8 د.أ</span>
+                    <button class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="new-footer">
+        <div class="footer-container">
+            <!-- العمود الأول -->
+            <div class="footer-column">
+                <h3>عن الفندق</h3>
+                <div class="footer-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="faq.html">الأسئلة الشائعة</a>
+                </div>
+            </div>
+            
+            <!-- العمود الثاني -->
+            <div class="footer-column">
+                <h3>معلومات قانونية</h3>
+                <div class="footer-links">
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+            </div>
+            
+            <!-- العمود الثالث -->
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> هونغ كونغ – الصين</p>
+                    <p><i class="fas fa-phone"></i> +962 795637443</p>
+                    <p><i class="fas fa-envelope"></i> lovinghomes@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- العمود الرابع -->
+            <div class="footer-column">
+                <h3>وسائل التواصل</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/lovinghomes2026" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.snapchat.com/add/loving_homes" target="_blank" class="social-link snapchat"><i class="fab fa-snapchat"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- سطر الحقوق -->
+        <div class="footer-bottom">
+            <p>© 2026 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- Floating Accessibility Button -->
+    <button class="floating-access-btn" onclick="toggleAccessibilityPanel()" title="إمكانيات الوصول">
+        <i class="fas fa-universal-access"></i>
+        <span class="pulse-ring"></span>
+        <span class="accessibility-check"></span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" onclick="scrollToTop()" title="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="panel-header">
+            <i class="fas fa-universal-access"></i>
+            <h3>إمكانيات الوصول</h3>
+            <button class="close-btn" onclick="toggleAccessibilityPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="access-option">
+                <div class="option-info">
+                    <i class="fas fa-text-height"></i>
+                    <div>
+                        <h4>حجم النص</h4>
+                        <p>ضبط حجم الخط حسب الرغبة</p>
+                    </div>
+                </div>
+                <div class="size-controls">
+                    <button onclick="decreaseFontSize()" class="size-btn">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="size-display" id="sizeDisplay">100%</span>
+                    <button onclick="increaseFontSize()" class="size-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="access-option" onclick="toggleTextSpacing()">
+                <div class="option-info">
+                    <i class="fas fa-ruler-horizontal"></i>
+                    <div>
+                        <h4>تباعد النصوص</h4>
+                        <p>زيادة المسافة بين الكلمات</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="spacingToggle" onchange="toggleTextSpacing()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleCursor()">
+                <div class="option-info">
+                    <i class="fas fa-paw"></i>
+                    <div>
+                        <h4>تغيير المؤشر</h4>
+                        <p>إلغاء تفعيل المؤشر 🐾</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="cursorToggle" onchange="toggleCursor()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleDarkMode()">
+                <div class="option-info">
+                    <i class="fas fa-moon"></i>
+                    <div>
+                        <h4>الوضع الداكن</h4>
+                        <p>راحة العين في الإضاءة المنخفضة</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="reset-btn" onclick="resetSettings()">
+                <i class="fas fa-redo"></i>
+                إعادة الضبط الافتراضي
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

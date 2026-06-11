@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - Loving Homes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="modern-nav">
+        <div class="nav-wrapper">
+            <div class="nav-actions">
+                <button class="icon-btn login-btn" onclick="showLogin()"><i class="fas fa-user"></i></button>
+                <button class="icon-btn cart-btn" onclick="showCart()"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></button>
+            </div>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-paw"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="products.html" class="nav-item">
+                    <i class="fas fa-bone"></i>
+                    <span>المنتجات</span>
+                </a>
+                <a href="accessories.html" class="nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>المرافق</span>
+                </a>
+                <a href="bundles.html" class="nav-item">
+                    <i class="fas fa-gift"></i>
+                    <span>الحزم</span>
+                </a>
+                <a href="testimonials.html" class="nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>آراء العملاء</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>اتصل بنا</span>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand">
+                <span class="brand-text">Loving Homes</span>
+                <img src="media/logo loving homes.webp" alt="Loving Homes" class="brand-logo">
+            </a>
+
+            <button class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header-modern">
+        <div class="header-content">
+            <h1>من نحن</h1>
+            <p>تعرف على قصتنا ورؤيتنا</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="about-content">
+        <div class="about-text">
+            <p class="lead">يقع فندقنا المتخصص في رعاية الكلاب في قلب هونج كونج في الصين، حيث نعيد تعريف مفهوم العناية بالحيوانات الأليفة من خلال تجربة فندقية متكاملة تجمع بين الراحة، الأمان، والاهتمام الحقيقي بكل كلب كأنه فرد من العائلة.</p>
+            
+            <p>نقدم مجموعة متكاملة من الخدمات المصممة بعناية لتلبية احتياجات الكلاب بمختلف أحجامها وسلالاتها، تشمل الإقامة الفندقية المريحة، العناية اليومية، خدمات التنظيف والتجميل، برامج اللعب والترفيه، إضافة إلى منتجات عالية الجودة مختارة بعناية لدعم صحة وسعادة الكلاب.</p>
+            
+            <p>فريقنا يتكوّن من مختصين محبين للحيوانات وذوي خبرة في التعامل مع الكلاب، يعملون بشغف واحترافية لضمان بيئة آمنة، نظيفة، ومليئة بالاهتمام. نحن نؤمن أن الكلب يستحق رعاية راقية وخدمة موثوقة تمنح المالك راحة البال في كل الأوقات.</p>
+            
+            <p class="highlight">في فندقنا، لا نقدّم مجرد خدمة، بل نوفّر تجربة متكاملة تعكس التزامنا بالجودة، الرحمة، والمعايير العالية في عالم رعاية الكلاب.</p>
+        </div>
+
+        <!-- فريقنا -->
+        <section class="team-section">
+            <h2 class="section-title">فريقنا</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar"><img src="media/a2.webp" alt="أحمد تشين"></div>
+                    <h3>أحمد تشين</h3>
+                    <p class="team-role">مدير الفندق</p>
+                    <p class="team-goal">هدفه: تقديم أفضل تجربة لكلبك</p>
+                    <span class="team-nationality">🇨🇳 صيني</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar"><img src="media/b2.webp" alt="سارة لي"></div>
+                    <h3>سارة لي</h3>
+                    <p class="team-role">الطبيبة البيطرية</p>
+                    <p class="team-goal">هدفها: صحة كلبك أولاً</p>
+                    <span class="team-nationality">🇭🇰 هونغي</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar"><img src="media/a3.webp" alt="جون وانغ"></div>
+                    <h3>جون وانغ</h3>
+                    <p class="team-role">مدرب الكلاب</p>
+                    <p class="team-goal">هدفه: إسعاد كلبك يومياً</p>
+                    <span class="team-nationality">🇨🇳 صيني</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="new-footer">
+        <div class="footer-container">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>عن الفندق</h3>
+                <div class="footer-links">
+                   
+                    <a href="about.html">من نحن</a>
+                    <a href="faq.html">الأسئلة الشائعة</a>
+                </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>معلومات قانونية</h3>
+                <div class="footer-links">
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+            </div>
+            
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> هونغ كونغ – الصين</p>
+                    <p><i class="fas fa-phone"></i> +962 795637443</p>
+                    <p><i class="fas fa-envelope"></i> lovinghomes@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- Column 4 -->
+            <div class="footer-column">
+                <h3>وسائل التواصل</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/lovinghomes2026" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.snapchat.com/add/loving_homes" target="_blank" class="social-link snapchat"><i class="fab fa-snapchat"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- Floating Accessibility Button -->
+    <button class="floating-access-btn" onclick="toggleAccessibilityPanel()" title="إمكانيات الوصول">
+        <i class="fas fa-universal-access"></i>
+        <span class="pulse-ring"></span>
+        <span class="accessibility-check"></span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" onclick="scrollToTop()" title="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="panel-header">
+            <i class="fas fa-universal-access"></i>
+            <h3>إمكانيات الوصول</h3>
+            <button class="close-btn" onclick="toggleAccessibilityPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="access-option">
+                <div class="option-info">
+                    <i class="fas fa-text-height"></i>
+                    <div>
+                        <h4>حجم النص</h4>
+                        <p>ضبط حجم الخط حسب الرغبة</p>
+                    </div>
+                </div>
+                <div class="size-controls">
+                    <button onclick="decreaseFontSize()" class="size-btn">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="size-display" id="sizeDisplay">100%</span>
+                    <button onclick="increaseFontSize()" class="size-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="access-option" onclick="toggleTextSpacing()">
+                <div class="option-info">
+                    <i class="fas fa-ruler-horizontal"></i>
+                    <div>
+                        <h4>تباعد النصوص</h4>
+                        <p>زيادة المسافة بين الكلمات</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="spacingToggle" onchange="toggleTextSpacing()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleCursor()">
+                <div class="option-info">
+                    <i class="fas fa-paw"></i>
+                    <div>
+                        <h4>تغيير المؤشر</h4>
+                        <p>إلغاء تفعيل المؤشر 🐾</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="cursorToggle" onchange="toggleCursor()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleDarkMode()">
+                <div class="option-info">
+                    <i class="fas fa-moon"></i>
+                    <div>
+                        <h4>الوضع الداكن</h4>
+                        <p>راحة العين في الإضاءة المنخفضة</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="reset-btn" onclick="resetSettings()">
+                <i class="fas fa-redo"></i>
+                إعادة الضبط الافتراضي
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

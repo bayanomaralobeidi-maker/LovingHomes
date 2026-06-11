@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - Loving Homes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل الحديث -->
+    <nav class="modern-nav">
+        <div class="nav-wrapper">
+            <div class="nav-actions">
+                <button class="icon-btn login-btn" onclick="showLogin()"><i class="fas fa-user"></i></button>
+                <button class="icon-btn cart-btn" onclick="showCart()"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></button>
+            </div>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-paw"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="products.html" class="nav-item">
+                    <i class="fas fa-bone"></i>
+                    <span>المنتجات</span>
+                </a>
+                <a href="accessories.html" class="nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>المرافق</span>
+                </a>
+                <a href="bundles.html" class="nav-item">
+                    <i class="fas fa-gift"></i>
+                    <span>الحزم</span>
+                </a>
+                <a href="testimonials.html" class="nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>آراء العملاء</span>
+                </a>
+                <a href="contact.html" class="nav-item active">
+                    <i class="fas fa-envelope"></i>
+                    <span>اتصل بنا</span>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand">
+                <span class="brand-text">Loving Homes</span>
+                <img src="media/logo loving homes.webp" alt="Loving Homes" class="brand-logo">
+            </a>
+
+            <button class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Floating Accessibility Button -->
+    <button class="floating-access-btn" onclick="toggleAccessibilityPanel()" title="إمكانيات الوصول">
+        <i class="fas fa-universal-access"></i>
+        <span class="pulse-ring"></span>
+        <span class="accessibility-check"></span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" onclick="scrollToTop()" title="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="panel-header">
+            <i class="fas fa-universal-access"></i>
+            <h3>إمكانيات الوصول</h3>
+            <button class="close-btn" onclick="toggleAccessibilityPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="access-option">
+                <div class="option-info">
+                    <i class="fas fa-text-height"></i>
+                    <div>
+                        <h4>حجم النص</h4>
+                        <p>ضبط حجم الخط حسب الرغبة</p>
+                    </div>
+                </div>
+                <div class="size-controls">
+                    <button onclick="decreaseFontSize()" class="size-btn">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="size-display" id="sizeDisplay">100%</span>
+                    <button onclick="increaseFontSize()" class="size-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="access-option" onclick="toggleTextSpacing()">
+                <div class="option-info">
+                    <i class="fas fa-ruler-horizontal"></i>
+                    <div>
+                        <h4>تباعد النصوص</h4>
+                        <p>زيادة المسافة بين الكلمات</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="spacingToggle" onchange="toggleTextSpacing()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleCursor()">
+                <div class="option-info">
+                    <i class="fas fa-paw"></i>
+                    <div>
+                        <h4>تغيير المؤشر</h4>
+                        <p>إلغاء تفعيل المؤشر 🐾</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="cursorToggle" onchange="toggleCursor()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleDarkMode()">
+                <div class="option-info">
+                    <i class="fas fa-moon"></i>
+                    <div>
+                        <h4>الوضع الداكن</h4>
+                        <p>راحة العين في الإضاءة المنخفضة</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="reset-btn" onclick="resetSettings()">
+                <i class="fas fa-redo"></i>
+                إعادة الضبط الافتراضي
+            </button>
+        </div>
+    </div>
+
+    <!-- صفحة اتصل بنا -->
+    <section class="page-header-modern">
+        <div class="header-content">
+            <h1>اتصل بنا</h1>
+            <p>نحن هنا لمساعدتك! تواصل معنا في أي وقت</p>
+        </div>
+    </section>
+
+    <section class="contact-page">
+        <div class="contact-container">
+            <!-- معلومات التواصل -->
+            <div class="contact-info-section">
+                <h2>معلومات التواصل</h2>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>الموقع</h3>
+                            <p>هونغ كونغ – الصين</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>الهاتف</h3>
+                            <p>0795637443</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>lovinghomes@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>أوقات العمل</h3>
+                            <p>24 ساعة / 7 أيام</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- وسائل التواصل الاجتماعي -->
+                <div class="social-section">
+                    <h3>تابعنا على التواصل الاجتماعي</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/lovinghomes2026" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>إنستغرام</span>
+                        </a>
+                        <a href="https://www.snapchat.com/add/loving_homes" target="_blank" class="social-btn snapchat">
+                            <i class="fab fa-snapchat"></i>
+                            <span>سناب شات</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نموذج التواصل -->
+            <div class="contact-form-section">
+                <h2>أرسل لنا رسالة</h2>
+                <form class="contact-form" onsubmit="submitContactForm(event)">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            الاسم الكامل
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            البريد الإلكتروني
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-phone"></i>
+                            رقم الهاتف
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-tag"></i>
+                            الموضوع
+                        </label>
+                        <select id="subject" name="subject" required>
+                            <option value="">اختر الموضوع</option>
+                            <option value="general">استفسار عام</option>
+                            <option value="order">استفسار عن طلب</option>
+                            <option value="product">استفسار عن منتج</option>
+                            <option value="return">الإرجاع والاستبدال</option>
+                            <option value="suggestion">اقتراح</option>
+                            <option value="complaint">شكوى</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i>
+                            الرسالة
+                        </label>
+                        <textarea id="message" name="message" rows="6" placeholder="اكتب رسالتك هنا..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- خريطة الموقع -->
+        <div class="map-section">
+            <h2>موقعنا على الخريطة</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236197.6947997696!2d114.04441748753604!3d22.35263964937663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403e2eda332980f%3A0xf08ab3badbeaa97!2sHong%20Kong!5e0!3m2!1sen!2sus!4v1645456789012!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Messages -->
+    <div class="thank-you-modal" id="formModal">
+        <div class="form-modal-content" id="formModalContent">
+            <!-- Content will be added dynamically -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="new-footer">
+        <div class="footer-container">
+            <!-- العمود الأول -->
+            <div class="footer-column">
+                <h3>عن الفندق</h3>
+                <div class="footer-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="faq.html">الأسئلة الشائعة</a>
+                  
+                </div>
+            </div>
+            
+            <!-- العمود الثاني -->
+            <div class="footer-column">
+                <h3>معلومات قانونية</h3>
+                <div class="footer-links">
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+            </div>
+            
+            <!-- العمود الثالث -->
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> هونغ كونغ – الصين</p>
+                    <p><i class="fas fa-phone"></i> +962 795637443</p>
+                    <p><i class="fas fa-envelope"></i> lovinghomes@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- العمود الرابع -->
+            <div class="footer-column">
+                <h3>وسائل التواصل</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/lovinghomes2026" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.snapchat.com/add/loving_homes" target="_blank" class="social-link snapchat"><i class="fab fa-snapchat"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- سطر الحقوق -->
+        <div class="footer-bottom">
+            <p>© 2026 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        /* تنسيق الإشعارات */
+        .notification {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            padding: 20px 40px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 90%;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .notification.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+        
+        .notification.error {
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            color: white;
+        }
+        
+        .notification.warning {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            color: #333;
+        }
+        
+        .notification i {
+            font-size: 1.5rem;
+        }
+        
+        /* تأثير الخطأ في الحقول */
+        .form-group input.error,
+        .form-group select.error,
+        .form-group textarea.error {
+            border-color: #dc3545 !important;
+            animation: shake 0.5s ease;
+        }
+        
+        .form-group input.valid,
+        .form-group select.valid,
+        .form-group textarea.valid {
+            border-color: #28a745 !important;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group input.error + .error-message,
+        .form-group select.error + .error-message,
+        .form-group textarea.error + .error-message {
+            display: block;
+        }
+    </style>
+    <script>
+        // دالة إظهار الإشعار
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            
+            let icon = '';
+            if (type === 'success') {
+                icon = '<i class="fas fa-check-circle"></i>';
+            } else if (type === 'error') {
+                icon = '<i class="fas fa-exclamation-circle"></i>';
+            } else if (type === 'warning') {
+                icon = '<i class="fas fa-exclamation-triangle"></i>';
+            }
+            
+            notification.innerHTML = `${icon}<span>${message}</span>`;
+            document.body.appendChild(notification);
+            
+            // إظهار الإشعار
+            setTimeout(() => notification.classList.add('show'), 10);
+            
+            // إخفاء الإشعار بعد 4 ثوانٍ
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 400);
+            }, 4000);
+        }
+        
+        // دالة التحقق من صحة البريد الإلكتروني
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // دالة التحقق من صحة رقم الهاتف
+        function isValidPhone(phone) {
+            // يجب أن يكون 10 أرقام بالضبط
+            const phoneRegex = /^\d{10}$/;
+            return phoneRegex.test(phone.replace(/\s/g, ''));
+        }
+        
+        // دالة التحقق من صحة النموذج
+        function validateForm() {
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            
+            // التحقق من الاسم
+            if (name.value.trim().length < 2) {
+                name.classList.add('error');
+                name.classList.remove('valid');
+                isValid = false;
+            } else {
+                name.classList.remove('error');
+                name.classList.add('valid');
+            }
+            
+            // التحقق من البريد الإلكتروني
+            if (!isValidEmail(email.value)) {
+                email.classList.add('error');
+                email.classList.remove('valid');
+                isValid = false;
+            } else {
+                email.classList.remove('error');
+                email.classList.add('valid');
+            }
+            
+            // التحقق من رقم الهاتف (إذا تم إدخاله)
+            if (phone.value.trim() !== '' && !isValidPhone(phone.value)) {
+                phone.classList.add('error');
+                phone.classList.remove('valid');
+                isValid = false;
+            } else if (phone.value.trim() === '') {
+                phone.classList.remove('error');
+                phone.classList.remove('valid');
+            } else {
+                phone.classList.remove('error');
+                phone.classList.add('valid');
+            }
+            
+            // التحقق من الموضوع
+            if (subject.value === '') {
+                subject.classList.add('error');
+                subject.classList.remove('valid');
+                isValid = false;
+            } else {
+                subject.classList.remove('error');
+                subject.classList.add('valid');
+            }
+            
+            // التحقق من الرسالة
+            if (message.value.trim().length < 10) {
+                message.classList.add('error');
+                message.classList.remove('valid');
+                isValid = false;
+            } else {
+                message.classList.remove('error');
+                message.classList.add('valid');
+            }
+            
+            return isValid;
+        }
+        
+        // دالة إرسال نموذج التواصل
+        function submitContactForm(event) {
+            event.preventDefault();
+            
+            // التحقق من صحة البيانات
+            if (!validateForm()) {
+                showFormModal('warning', 'النموذج غير مكتمل', 'يرجى ملء جميع الحقول المطلوبة', 'حسناً');
+                return;
+            }
+            
+            const name = document.getElementById('name').value;
+            
+            // هنا يمكنك إضافة كود إرسال البيانات للخادم
+            
+            // إظهار رسالة نجاح
+            showFormModal('success', 'شكراً لك! ' + name, 'تم إرسال رسالتنا بنجاح. سنقوم بالرد عليك في أقرب وقت ممكن', 'حسناً');
+            
+            // إعادة تعيين النموذج
+            event.target.reset();
+            
+            // إزالة أيقونات الصحة
+            const inputs = event.target.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.classList.remove('valid');
+            });
+        }
+        
+        // دالة إظهار نافذة النموذج المنبثقة
+        function showFormModal(type, title, text, buttonText) {
+            const modal = document.getElementById('formModal');
+            const content = document.getElementById('formModalContent');
+            
+            const icon = type === 'success' ? '✓' : '⚠';
+            
+            content.innerHTML = `
+                <div class="modal-icon ${type}">${icon}</div>
+                <h3>${title}</h3>
+                <p>${text}</p>
+                <button onclick="closeFormModal()">${buttonText}</button>
+            `;
+            
+            modal.classList.add('active');
+        }
+        
+        // دالة إغلاق نافذة النموذج المنبثقة
+        function closeFormModal() {
+            const modal = document.getElementById('formModal');
+            modal.classList.remove('active');
+        }
+        
+        // إغلاق النافذة عند النقر خارجها
+        document.getElementById('formModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFormModal();
+            }
+        });
+        
+        // إزالة تأثير الخط عند الكتابة
+        document.querySelectorAll('.contact-form input, .contact-form select, .contact-form textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+            });
+        });
+    </script>
+</body>
+</html>

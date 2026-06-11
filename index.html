@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loving Homes - متجر الكلاب</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل الحديث -->
+    <nav class="modern-nav">
+        <div class="nav-wrapper">
+            <div class="nav-actions">
+                <button class="icon-btn login-btn" onclick="showLogin()"><i class="fas fa-user"></i></button>
+                <button class="icon-btn cart-btn" onclick="showCart()"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></button>
+            </div>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-paw"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="products.html" class="nav-item">
+                    <i class="fas fa-bone"></i>
+                    <span>المنتجات</span>
+                </a>
+                <a href="accessories.html" class="nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>المرافق</span>
+                </a>
+                <a href="bundles.html" class="nav-item">
+                    <i class="fas fa-gift"></i>
+                    <span>الحزم</span>
+                </a>
+                <a href="testimonials.html" class="nav-item">
+                    <i class="fas fa-heart"></i>
+                    <span>آراء العملاء</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>اتصل بنا</span>
+                </a>
+            </div>
+
+            <a href="index.html" class="brand">
+                <span class="brand-text">Loving Homes</span>
+                <img src="media/logo loving homes.webp" alt="Loving Homes" class="brand-logo">
+            </a>
+
+            <button class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Floating Accessibility Button -->
+    <button class="floating-access-btn" onclick="toggleAccessibilityPanel()" title="إمكانيات الوصول">
+        <i class="fas fa-universal-access"></i>
+        <span class="pulse-ring"></span>
+        <span class="accessibility-check"></span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" onclick="scrollToTop()" title="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <div class="panel-header">
+            <i class="fas fa-universal-access"></i>
+            <h3>إمكانيات الوصول</h3>
+            <button class="close-btn" onclick="toggleAccessibilityPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="access-option">
+                <div class="option-info">
+                    <i class="fas fa-text-height"></i>
+                    <div>
+                        <h4>حجم النص</h4>
+                        <p>ضبط حجم الخط حسب الرغبة</p>
+                    </div>
+                </div>
+                <div class="size-controls">
+                    <button onclick="decreaseFontSize()" class="size-btn">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="size-display" id="sizeDisplay">100%</span>
+                    <button onclick="increaseFontSize()" class="size-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="access-option" onclick="toggleTextSpacing()">
+                <div class="option-info">
+                    <i class="fas fa-ruler-horizontal"></i>
+                    <div>
+                        <h4>تباعد النصوص</h4>
+                        <p>زيادة المسافة بين الكلمات</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="spacingToggle" onchange="toggleTextSpacing()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleCursor()">
+                <div class="option-info">
+                    <i class="fas fa-paw"></i>
+                    <div>
+                        <h4>تغيير المؤشر</h4>
+                        <p>إلغاء تفعيل المؤشر 🐾</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="cursorToggle" onchange="toggleCursor()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="access-option" onclick="toggleDarkMode()">
+                <div class="option-info">
+                    <i class="fas fa-moon"></i>
+                    <div>
+                        <h4>الوضع الداكن</h4>
+                        <p>راحة العين في الإضاءة المنخفضة</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="reset-btn" onclick="resetSettings()">
+                <i class="fas fa-redo"></i>
+                إعادة الضبط الافتراضي
+            </button>
+        </div>
+    </div>
+
+            <button class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section حديث -->
+    <section class="hero-modern">
+        <div class="hero-bg">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-crown"></i>
+                <span>أفضل جودة للكلاب</span>
+            </div>
+            <h1> لأن كلبك يستحق <span class="highlight">أفضل حياة</span></h1>
+            <p>مجموعة حصرية من المنتجات والخدمات لكلبك العزيز. نحن نهتم براحته وسعادته كأنها عائلتنا</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="primary-btn">
+                    <span>تسوق الآن</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="bundles.html" class="secondary-btn">
+                    <i class="fas fa-gift"></i>
+                    <span>الحزم المميزة</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">عميل سعيد</span>
+                </div>
+               
+                <div class="stat">
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">تقييم العملاء</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="dog-showcase">
+                <div class="dog-card">
+                    <div class="slideshow-images">
+                        <img src="media/dog27.webp" alt="Dog 1">
+                        <img src="media/dog33.webp" alt="Dog 2">
+                        <img src="media/dog19.webp" alt="Dog 3">
+                        <img src="media/dog21.webp" alt="Dog 4">
+                        <img src="media/dog14.webp" alt="Dog 5">
+                        <img src="media/dog2.webp" alt="Dog 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-modern">
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+            <h3>توصيل فوري</h3>
+            <p>خلال 24 ساعة</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>ضمان الجودة</h3>
+            <p>100% أصلي</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <h3>دعم مباشر</h3>
+            <p>24/7 متاح</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fas fa-undo"></i></div>
+            <h3>إرجاع سهل</h3>
+            <p>30 يوم ضمان</p>
+        </div>
+    </section>
+
+    <!-- قصتنا -->
+    <section class="our-story">
+        <h2 class="section-title">قصتنا</h2>
+        <div class="story-content">
+            <div class="story-text">
+                <p>مرحباً بكم في <strong>Loving Homes</strong>، الفندق المثالي لكلابكم العزيزة!</p>
+                <p>نحن نؤمن أن كلبك ليس مجرد حيوان أليف، بل هو عضو في عائلتك يستحق أفضل رعاية واهتمام. تأسس متجرنا من محبين للكلاب بهدف توفير كل ما يحتاجه كلبك لسعادة وصحة أفضل.</p>
+                <p>منتجاتنا مصنوعة بأعلى معايير الجودة، ونختار كل منتج بعناية فائقة لضمان راحة كلبك وسعادته. نحن هنا لنساعدك في توفير أفضل حياة ممكنة لصديقك الوفي.</p>
+                <p class="story-tagline">لأن ابتسامته تستحق الأفضل! </p>
+            </div>
+            <div class="story-images">
+                <div class="image-row">
+                    <img src="media/dog40.webp" alt="Dog 1" class="story-img">
+                    <img src="media/dog41.webp" alt="Dog 2" class="story-img">
+                </div>
+                <div class="image-row">
+                    <img src="media/dog42.webp" alt="Dog 3" class="story-img">
+                    <img src="media/dog43.webp" alt="Dog 4" class="story-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="new-footer">
+        <div class="footer-container">
+            <!-- العمود الأول -->
+            <div class="footer-column">
+                <h3>عن الفندق</h3>
+                <div class="footer-links">
+                    <a href="about.html">من نحن</a>
+                    <a href="faq.html">الأسئلة الشائعة</a>
+                </div>
+            </div>
+            
+            <!-- العمود الثاني -->
+            <div class="footer-column">
+                <h3>معلومات قانونية</h3>
+                <div class="footer-links">
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">الشروط والأحكام</a>
+                </div>
+            </div>
+            
+            <!-- العمود الثالث -->
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> هونغ كونغ – الصين</p>
+                    <p><i class="fas fa-phone"></i> +962 795637443</p>
+                    <p><i class="fas fa-envelope"></i> lovinghomes@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- العمود الرابع -->
+            <div class="footer-column">
+                <h3>وسائل التواصل</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/lovinghomes2026" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.snapchat.com/add/loving_homes" target="_blank" class="social-link snapchat"><i class="fab fa-snapchat"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- سطر الحقوق -->
+        <div class="footer-bottom">
+            <p>© 2026 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
